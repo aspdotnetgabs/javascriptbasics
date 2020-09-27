@@ -1,0 +1,69 @@
+<html>
+<head>
+<script language="JavaScript">
+
+function getDayName(theDate)
+{
+    var nameOfDay;
+    var currentDay = theDate.getDay();
+
+    if      (currentDay == 0) nameOfDay = "Sunday"
+    else if (currentDay == 1) nameOfDay = "Monday"
+    else if (currentDay == 2) nameOfDay = "Tuesday"
+    else if (currentDay == 3) nameOfDay = "Wednesday"
+    else if (currentDay == 4) nameOfDay = "Thursday"
+    else if (currentDay == 5) nameOfDay = "Friday"
+    else nameOfDay = "Saturday";
+
+    return nameOfDay;
+}
+
+function getMonthName(theDate)
+{
+    var nameOfMonth;
+    var currentMonth = theDate.getMonth();
+
+    if      (currentMonth == 0) nameOfMonth = "January"
+    else if (currentMonth == 1) nameOfMonth = "February"
+    else if (currentMonth == 2) nameOfMonth = "March"
+    else if (currentMonth == 3) nameOfMonth = "April"
+    else if (currentMonth == 4) nameOfMonth = "May"
+    else if (currentMonth == 5) nameOfMonth = "June"
+    else if (currentMonth == 6) nameOfMonth = "July"
+    else if (currentMonth == 7) nameOfMonth = "August"
+    else if (currentMonth == 8) nameOfMonth = "September"
+    else if (currentMonth == 9) nameOfMonth = "October"
+    else if (currentMonth == 10) nameOfMonth = "November"
+    else nameOfMonth = "December";
+
+    return nameOfMonth;
+}
+
+function getDate()
+{
+    var myDateObject = new Date;
+
+    var thisDay = getDayName(myDateObject);
+    var thisMonth = getMonthName(myDateObject);
+
+    var thisYear = myDateObject.getFullYear();
+    var thisDate = myDateObject.getDate();
+
+    var fullDate = thisDay + ", " + thisDate + " " + thisMonth + " " + thisYear;
+    mySpan.innerText = fullDate; 
+}
+
+</script>
+
+<style>
+span {font-size:14pt; position:absolute; left:30%; top:40%}
+</style>
+
+</head>
+
+<body onLoad="getDate()">
+
+<span id="mySpan">The date goes here...</span>
+
+</body>
+</html>
